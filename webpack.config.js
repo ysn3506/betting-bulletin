@@ -11,6 +11,35 @@ module.exports = {
 				use: 'ts-loader',
 				exclude: /node_modules/,
 			},
+			{
+				test: /\.s[ac]ss$/i,
+				use: ['style-loader', 'css-loader', 'sass-loader'],
+			},
+			{
+				test: /\.svg$/i,
+				issuer: /\.[jt]sx?$/,
+				use: ['@svgr/webpack'],
+			},
+			{
+				test: /\.(png|svg|jpg|jpeg|gif|ico)$/i,
+				loader: 'file-loader',
+				options: {
+					name: '[name].[ext]',
+					outputPath: 'assets/',
+					publicPath: '../assets/',
+					esModule: false,
+				},
+			},
+			{
+				test: /\.(woff)$/i,
+				loader: 'file-loader',
+				options: {
+					name: '[name].[ext]',
+					outputPath: 'fonts/',
+					publicPath: 'fonts/',
+					esModule: false,
+				},
+			},
 		],
 	},
 	plugins: [

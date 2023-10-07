@@ -1,0 +1,18 @@
+.header-wrapper{
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    min-height: 80px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    background-color: #ffcc00;
+    padding:1rem 5rem;
+    justify-content: space-between;
+    align-items: center;
+    .header-left{
+        .header-logo{
+            height: 2rem;
+        }
+    }
+}

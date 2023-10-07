@@ -1,6 +1,6 @@
 {
 	"compilerOptions": {
-		"outDir": "./dist/",
+		"outDir": "./public/",
 		"noImplicitAny": true,
 		"module": "es6",
 		"target": "es5",
@@ -8,5 +8,8 @@
 		"allowJs": true,
 		"moduleResolution": "node"
 	},
-	"exclude": ["node_modules"]
+	"exclude": ["node_modules"],
+	"include": [ "./custom.d.ts","./src/**/*"],
+	"files": ["custom.d.ts"]
+
 }
