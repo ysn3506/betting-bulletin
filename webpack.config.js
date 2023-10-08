@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
 	mode: 'development',
@@ -15,18 +16,14 @@ module.exports = {
 				test: /\.s[ac]ss$/i,
 				use: ['style-loader', 'css-loader', 'sass-loader'],
 			},
-			{
-				test: /\.svg$/i,
-				issuer: /\.[jt]sx?$/,
-				use: ['@svgr/webpack'],
-			},
+
 			{
 				test: /\.(png|svg|jpg|jpeg|gif|ico)$/i,
 				loader: 'file-loader',
 				options: {
 					name: '[name].[ext]',
 					outputPath: 'assets/',
-					publicPath: '../assets/',
+					publicPath: '/assets/',
 					esModule: false,
 				},
 			},
@@ -46,6 +43,7 @@ module.exports = {
 		new HtmlWebPackPlugin({
 			template: 'public/index.html',
 		}),
+		new Dotenv(),
 	],
 	target: 'web',
 	devServer: {

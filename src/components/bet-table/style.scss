@@ -1,0 +1,144 @@
+@use '../../global-styles/mixins.scss';
+
+.table-wrapper {
+	display: grid;
+	grid-template-rows: 1fr auto;
+	position: absolute;
+	width: 95%;
+	height: calc(100vh - 80px);
+	overflow: auto;
+	margin: 0 auto;
+	left: 2.5%;
+	padding-top: 2.5rem;
+	border: 1px solid black;
+
+	@include mixins.desktop-lg {
+		width: 80%;
+		left: 10%;
+		padding-top: 1.8rem;
+	}
+
+	img {
+		width: 1rem;
+	}
+
+	.header {
+		display: grid;
+		grid-template-columns: 12rem 3rem repeat(15, 0.5fr);
+		grid-template-rows: 1fr;
+		background-color: #86919d;
+		font-size: 1rem;
+		font-weight: bold;
+		color: azure;
+		width: 95%;
+		position: fixed;
+		top: 80px;
+		z-index: 3;
+
+		div {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			border: 0.5px solid black;
+			padding: 0.75rem 0;
+		}
+
+		.comments {
+			display: none;
+		}
+
+		@include mixins.desktop-lg {
+			width: 80%;
+			left: 10%;
+			grid-template-columns: 25rem 10rem repeat(16, 0.5fr);
+			font-size: 1.2rem;
+
+			.comments {
+				display: flex;
+			}
+
+			div {
+				padding: 0.25rem 0;
+			}
+		}
+	}
+
+	button.go-to-top {
+		position: fixed;
+		bottom: 0.5rem;
+		height: 5rem;
+		border-radius: 5px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		left: 5%;
+		width: auto;
+		color: black;
+		z-index: 3;
+		background-color: #fc0;
+		border: none;
+
+		img {
+			position: relative;
+			width: 5rem;
+			height: 5rem;
+		}
+	}
+
+	.match {
+		display: grid;
+		grid-template-rows: 1fr 1.25fr;
+
+		@include mixins.desktop-lg {
+			grid-template-rows: 1fr 1.75fr;
+		}
+
+		.match-information {
+			background-color: #ebf6e8;
+			font-weight: bold;
+
+			div {
+				padding: 0.25rem 0;
+			}
+		}
+
+		.match-information,
+		.match-content {
+			display: grid;
+			grid-template-rows: 1fr;
+			grid-template-columns: 12rem 3rem repeat(15, 0.5fr);
+			width: 100%;
+
+			div,
+			button {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				border: 0.5px solid black;
+			}
+
+			div:first-child {
+				justify-content: flex-start;
+				padding-left: 0.25rem;
+			}
+
+			.comments {
+				display: none;
+			}
+
+			@include mixins.desktop-lg {
+				width: 100%;
+				left: 10%;
+				grid-template-columns: 25rem 10rem repeat(16, 0.5fr);
+
+				.comments {
+					display: flex;
+				}
+
+				div {
+					padding: 0;
+				}
+			}
+		}
+	}
+}

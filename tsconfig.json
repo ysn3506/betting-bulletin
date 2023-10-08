@@ -9,7 +9,6 @@
 		"moduleResolution": "node"
 	},
 	"exclude": ["node_modules"],
-	"include": [ "./custom.d.ts","./src/**/*"],
+	"include": ["./custom.d.ts", "./src/**/*"],
 	"files": ["custom.d.ts"]
-
 }

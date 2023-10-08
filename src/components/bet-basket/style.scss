@@ -1,0 +1,35 @@
+.basket-wrapper {
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	background-color: #86919d;
+	color: azure;
+	padding: 1rem 0;
+
+	.selected-matches {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		margin-bottom: 1rem;
+		border-bottom: 1px solid azure;
+		padding: 0 2.5rem 0.5rem;
+		max-height: 10rem;
+		overflow: scroll;
+
+		.selected-match {
+			display: flex;
+
+			// grid-template-columns: repeat(4, auto);
+			gap: 0.5rem;
+
+			span.ratio {
+				font-weight: bold;
+				font-size: 1.05rem;
+			}
+		}
+	}
+
+	.total {
+		padding: 0 2.5rem;
+	}
+}
